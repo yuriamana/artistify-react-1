@@ -16,8 +16,6 @@ Some additional features may also be implemented.
 - Search bar
 - Comments
 
-## PART I - The Backend
-
 ### The Repository
 
 You'll find the base source code here : [base repo](https://github.com/Kostra0ne/artistify-react-1 "here")
@@ -29,9 +27,13 @@ Notice that the repo contains 2 main folders :
 
 You will need 2 separate terminal windows to manage the 2 ends of the stack.
 
------
+---
 
-### Preparing the backend
+
+## PART I - The Backend
+
+
+### Setup
 
 Do you **remember** express, mongo, dotenv, mongoose and friends ? <br>
 Yes, No, Maybe ?<br>
@@ -110,6 +112,7 @@ app.use(cors(corsOptions));
 
 ```
 
+Implement the CORS configuration starting line 43 of `/server/app.js`
 
 
 **Learn more abour CORS**: 
@@ -137,6 +140,10 @@ All the models files are already provided and required. 👍
 All the routers files are already provided and required. 👍
 You'll need to code the actual routes though. 🤓
 Today you'll only deal with READ and DELETE. 😮‍💨
+
+
+**IMPORTANT** : all the backend routes are prefixed with `/api`
+**IMPORTANT** : all the routes return a HTTP response in JSON format.
 
 #### The artists router
 
@@ -237,8 +244,9 @@ REACT_APP_BACKEND_URL = http://localhost:5000
 
 Yes : react applications can also have environment variables !
 Note that you **MUST** prefix **ALL** the keys with **REACT_APP_**{KEY}.
-
 ex: `REACT_APP_MY_PAID_API_TOKEN = abcdefg1234`
+
+This value is used by the `/client/api/APIHandler.js` file, coming soon ; )
 
 
 
@@ -252,6 +260,10 @@ npm start
 Pay attention to the **frontend** terminal to see if the app launched correctly.
 
 Have a quick look to the available pages.
+
+**IMPORTANT**
+Some widgets are provided in `/client/src/components`.
+You are **free** to reuse some/all or choose your own file/folder organisation.
 
 
 ---
@@ -296,7 +308,7 @@ Time to connect the dots. The front is ready to receive some datas from the back
 
 
 **Note:** We will handle the <Like/> icon tomorrow.
-**Hint:** Why don't you try CSS grid to organise the results display ?
+**Trick:** Why not try using CSS grid to organise the results display ?
 
 ---
 
@@ -360,6 +372,10 @@ Here are some bonuses ; )
 
 #### On the app header
 - Implement the search bar for all artists and/or albums.
+
+#### Artist's details 
+- Code a Discography component displaying all the albums related to a given artist's id
+
 
 #### On the admin root page (http://localhost:3000/admin/)
 - Create a nice datavizualisation with chart.js, or rechart.js or d3.js ...
