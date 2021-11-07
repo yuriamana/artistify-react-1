@@ -142,9 +142,12 @@ All the routers files are already provided and required. 👍
 You'll need to code the actual routes though. 🤓
 Today you'll only deal with READ and DELETE. 😮‍💨
 
+---
 
-**IMPORTANT** : all the backend routes are prefixed with `/api`
-**IMPORTANT** : all the routes return a HTTP response in JSON format.
+**IMPORTANT** : all the backend routes are prefixed with `/api` ❗️❗️❗️
+**IMPORTANT** : all the routes return a HTTP response formated in JSON. ❗️❗️❗️
+
+---
 
 #### The artists router
 
