@@ -8,7 +8,8 @@
 
 
 
-Good new Hackers !
+**Good new Hackers !**
+
 Our client demands an update for the artistify application.
 The frontend will now be developed with ReactJs.
 Some additional features may also be implemented.
@@ -16,14 +17,14 @@ Some additional features may also be implemented.
 - Search bar
 - Comments
 
-### The Repository
+### The base repository
 
-You'll find the base source code here : [base repo](https://github.com/Kostra0ne/artistify-react-1 "here")
+You'll find the base source code here : [base repo](https://github.com/Kostra0ne/artistify-react-1 "here")  
 Clone it and get ready for **ruuuumble** !!!!
 
-Notice that the repo contains 2 main folders :
-- client (the react application)
-- server (the express application)
+The repository contains 2 main folders :
+- client (frontend A.K.A the react application)
+- server (backend A.K.A the express application)
 
 You will need 2 separate terminal windows to manage the 2 ends of the stack.
 
@@ -37,9 +38,9 @@ You will need 2 separate terminal windows to manage the 2 ends of the stack.
 
 Do you **remember** express, mongo, dotenv, mongoose and friends ? <br>
 Yes, No, Maybe ?<br>
-**Don't worry** : it's time to refresh your memories :)
+**Don't worry** : it's time to **refresh** your **memory** :)
 
-Start by checking the package.json to get an overview of the project.
+Start by checking the `/server/package.json` to get an overview of the project.
 
 ---
 
@@ -363,7 +364,7 @@ Here is an overview of the desired results :
 
 ### Wanna some more ?
 
-Here are some bonuses ; )
+Here are some bonuses.
 
 #### On the home page (http://localhost:3000)
 
