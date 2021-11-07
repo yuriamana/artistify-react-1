@@ -11,7 +11,7 @@ const styles = [
   },
   {
     name: "electro",
-    color: "fushia",
+    color: "#FD3F92",
     wikiURL: "https://en.wikipedia.org/wiki/Electro_(music)",
   },
   {
