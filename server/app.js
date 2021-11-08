@@ -63,7 +63,7 @@ if (_DEVMODE === true) {
       email: "gui@foo.bar",
       avatar:
         "https://res.cloudinary.com/gdaconcept/image/upload/v1575298339/user-pictures/jadlcjjnspfhknucjfkd.png",
-      role: "admin",
+      role: "user",
       favorites: {
         artists: ["5ded0f32701e2f8732a0513c"],
         albums: ["5ded24e254c2839b2badf011"],
