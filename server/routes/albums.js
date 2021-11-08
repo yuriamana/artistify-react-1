@@ -4,15 +4,15 @@
 
 const express = require("express");
 const router = new express.Router();
+
 const albumModel = require("../model/Album");
 const uploader = require("./../config/cloudinary");
 
-router.get("/albums", (req, res) => {
-  res.send("cooucoou");
-});
+// router.get("/albums", (req, res) => {
+//   res.send("cooucoou");
+// });
 
 router.get("/albums", async (req, res, next) => {
-  console.log(json(albums))
   try {
     const albums = await albumModel.find();
     res.status(200).json(albums);
