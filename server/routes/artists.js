@@ -10,7 +10,7 @@ const styleModel = require("../model/Style");
 
 router.get("/artists", async (req, res, next) => {
   try {
-    const artists = await artistModel.find()
+    const artists = await artistModel.find().populate("style")
     res.status(200).json(artists);
   } catch(e) {
     next(e);
@@ -18,19 +18,17 @@ router.get("/artists", async (req, res, next) => {
 })
 
 //create
-router.get("/artists", async (req, res, next) => {
 
-})
 
-router.get("/artists",  async (req, res, next) => {
-  try {
-    const newArtist = await artistModel.create(req.body);
-    res.status(201).json(newArtist)
-  } catch(e) {
-    next(e)
-  }
-  // res.send("@todo");
-});
+// router.get("/artists",  async (req, res, next) => {
+//   try {
+//     const newArtist = await artistModel.create(req.body);
+//     res.status(201).json(newArtist)
+//   } catch(e) {
+//     next(e)
+//   }
+//   // res.send("@todo");
+// });
 
 router.get("/artists/:id", async (req, res, next) => {
   try {

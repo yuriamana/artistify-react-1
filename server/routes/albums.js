@@ -5,14 +5,14 @@
 const express = require("express");
 const router = new express.Router();
 const albumModel = require("../model/Album");
-const uploader = require("./../config/cloudinary");
+// const uploader = require("./../config/cloudinary");
 
-router.get("/albums", (req, res) => {
-  res.send("cooucoou");
-});
+// router.get("/albums", (req, res) => {
+//   res.send("cooucoou");
+// });
 
 router.get("/albums", async (req, res, next) => {
-  console.log(json(albums))
+  
   try {
     const albums = await albumModel.find();
     res.status(200).json(albums);
@@ -32,8 +32,8 @@ router.get("/albums/:id", async (req, res, next) => {
 
 router.delete("/:id", async (req, res, next) => {
   try {
-    const deletedalbum = await albumModel.findByIdAndDelete(req.params.id);
-    res.status(200).json(deletedalbum);
+    const deletedAlbum = await albumModel.findByIdAndDelete(req.params.id);
+    res.status(200).json(deletedAlbum);
   } catch (err) {
     next(err);
   }
