@@ -7,7 +7,7 @@ import "./../styles/comment.css";
 import "./../styles/star.css";
 
 export default function Artists() {
-
+  
   return (
     <>
       <h1 className="title diy">D.I.Y (Artist)</h1>
