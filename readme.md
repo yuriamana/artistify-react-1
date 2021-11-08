@@ -281,7 +281,7 @@ Here is an implementation example :
 ```javascript=
 import APIHandler from "./api/APIHandler.js"
 
-APIHandler.get("/albums")
+APIHandler.get("/api/albums")
 .then({data} => console.log(data))
 .catch(err => console.error(err));
 
