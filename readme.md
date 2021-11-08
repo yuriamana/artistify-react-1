@@ -372,7 +372,7 @@ Here are some bonuses.
 #### On the home page (http://localhost:3000)
 
 - Fetch the 2 latests artists AND albums.
-- Fetch the 4 best rated artists AND albums.
+
 
 #### On the app header
 - Implement the search bar for all artists and/or albums.
