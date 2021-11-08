@@ -137,15 +137,15 @@ Pay attention to the **backend** terminal to see if the app launched correctly.
 
 ### Express: Set the API routes
 
-All the models files are already provided and required. 👍
-All the routers files are already provided and required. 👍
-You'll need to code the actual routes though. 🤓
-Today you'll only deal with READ and DELETE. 😮‍💨
+All the models files are already provided and required. 👍  
+All the routers files are already provided and required. 👍  
+You'll need to code the actual routes though. 🤓  
+Today you'll only deal with READ and DELETE. 😮‍💨  
 
 ---
 
-**IMPORTANT** : all the backend routes are prefixed with `/api` ❗️❗️❗️
-**IMPORTANT** : all the routes return a HTTP response formated in JSON. ❗️❗️❗️
+**IMPORTANT** : all the backend routes are prefixed with `/api` ❗️❗️❗️  
+**IMPORTANT** : all the routes return a HTTP response formated in JSON. ❗️❗️❗️  
 
 ---
 
