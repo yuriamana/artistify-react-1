@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import APIHandler from "../api/handler";
-import { Link } from "react-router-dom";
-import "../styles/style.css";
+import APIHandler from "./../../api/handler";
+// import "../styles/style.css";
 
 export default class AdminStyles extends Component {
     state = {
@@ -22,10 +21,31 @@ export default class AdminStyles extends Component {
         };
     };
   
-    handleDelete()
+    // handleDelete()
   
-    render()
-    {
-  
-    }
+    
+  render() {
+    return (
+      <div>
+        {!this.state.styles ? (
+          <p>loading...</p>
+        ) : (
+          this.state.styles.map((style) => {
+            return (
+              <div key={style._id} className="style">
+                <ul>
+                  <li>{style.cover}</li>
+                  <li>{style.title}</li>
+                  <li>{style.releaseDate}</li>
+                  <li>{style.label.name}</li>
+                  <li>{style.artist.name}</li>
+                  <li>{style.rates}</li>
+                </ul>
+              </div>
+            );
+          })
+        )}
+      </div>
+    );
+  }
   }

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import APIHandler from "../api/handler";
-import { Link } from "react-router-dom";
-import "../styles/label.css";
+import APIHandler from "./../../api/handler";
+// import "../styles/label.css";
 
 export default class AdminLabels extends Component {
     state = {
@@ -22,10 +21,31 @@ export default class AdminLabels extends Component {
         };
     };
   
-    handleDelete()
+    // handleDelete()
   
-    render()
-    {
-  
-    }
+   
+  render() {
+    return (
+      <div>
+        {!this.state.labels ? (
+          <p>loading...</p>
+        ) : (
+          this.state.labels.map((label) => {
+            return (
+              <div key={label._id} className="label">
+                <ul>
+                  <li>{label.cover}</li>
+                  <li>{label.title}</li>
+                  <li>{label.releaseDate}</li>
+                  <li>{label.label.name}</li>
+                  <li>{label.artist.name}</li>
+                  <li>{label.rates}</li>
+                </ul>
+              </div>
+            );
+          })
+        )}
+      </div>
+    );
+  }
   }
