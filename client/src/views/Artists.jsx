@@ -16,35 +16,39 @@ export default class Artists extends Component {
   }
   fetchArtists = async () => {
     try {
-      const res = await APIHandler.get("/api/artists/")
-        this.setState({
-          artists: res.data,
-        });
-      } catch(err) {
-        console.error(err);
-      };
+      const res = await APIHandler.get("/api/artists/");
+      this.setState({
+        artists: res.data,
+      });
+    } catch (err) {
+      console.error(err);
+    }
   };
+
+
   render() {
-  //  const { artists } = this.state.artists;
+    //  const { artists } = this.state.artists;
     return (
       <div>
         {!this.state.artists ? (
-          <p>loading...</p>
+          <p>no artist yet...</p>
         ) : (
-            this.state.artists.map(artist => {
-              return (
-                <div key={artist._id} className ="card">
-                  <ul>
-                    <li><Link to={"/artists/" + artist._id}>
-                    {artist.name}</Link></li>
-                    <li>{artist.description}</li>
-                    <li>{artist.style.name}</li>
-                    <li>{artist.rates}</li> 
-                  </ul>  
-                </div>
-              );
-            })
-          )}
+          this.state.artists.map((artist) => {
+            return (
+              <div key={artist._id} className="card">
+                <ul>
+                  <li>
+                    <Link to={"/artists/" + artist._id}>{artist.name}</Link>
+                  </li>
+                  <li>{artist.description}</li>
+                  <li>{artist.style.name}</li>
+                  <li>{artist.rates}</li>
+            
+                </ul>
+              </div>
+            );
+          })
+        )}
       </div>
     );
   }
