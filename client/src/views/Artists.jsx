@@ -24,6 +24,7 @@ export default class Artists extends Component {
         console.error(err);
       };
   };
+
   render() {
   //  const { artists } = this.state.artists;
     return (

@@ -37,6 +37,11 @@ export default function App() {
           <Route path="/albums/:id" component={Album} />
           <Route path="/contact-us" component={Contact} />
           <Route path="/dashboard" component={Dashboard} />
+          <Route path="/admin/artists" component={AdminArtists} />
+          <Route path="/admin/album" component={AdminAlbums} />
+          <Route path="/admin/label" component={AdminLabels} />
+          <Route path="/admin/style" component={AdminStyles} />
+          {/* <Route path="/admin/:type(artists|albums|labels|styles)" component={TabAdmin} /> */}
 
           {/* handling 404 pages (if no matched route above this component triggers) */}
           <Route path="*" component={NotFound} />
