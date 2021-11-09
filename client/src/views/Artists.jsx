@@ -3,8 +3,8 @@ import React, { Component } from "react";
 import APIHandler from "../api/handler";
 // import LabPreview from "../components/preview/LabPreview";
 import { Link } from "react-router-dom";
-// styles
 import "../styles/card.css";
+// import artists from "../../../server/bin/seed/seed.artist.js";
 
 export default class Artists extends Component {
   state = {
@@ -15,41 +15,35 @@ export default class Artists extends Component {
     this.fetchArtists();
   }
   fetchArtists = async () => {
-   await APIHandler.get("/api/artists" + this.props.id)
-      .then(({ data }) => {
+    try {
+      const res = await APIHandler.get("/api/artists/")
         this.setState({
-          artists: data,
+          artists: res.data,
         });
-      })
-      .catch((err) => {
+      } catch(err) {
         console.error(err);
-      });
-    };
-    render() {
-    const { artists } = this.state;
+      };
+  };
+  render() {
+   const { artists } = this.state.artists;
     return (
       <div>
         {!artists ? (
           <p>loading...</p>
         ) : (
             artists.map(artist => {
-              console.log(artists)
               return (
-                <div>
-                <ul>
-                  <li>{artist.name}</li>
-                  <li>{artist.description}</li>
-                  <li>{artist.style}</li>
-                  <li>{artist.rates}</li>
-                  <li>123123123</li>
-                </ul>  
-                <Link key={artist.id} to={"/artists/" + artist.id}>
-                <p>{artist.name}</p>
-                </Link>
-              </div>
+                <div key={artist._id} className ="card">
+                  <ul>
+                    <li><Link to={"/artists/" + artist._id}>
+                    {artist.name}</Link></li>
+                    <li>{artist.description}</li>
+                    <li>{artist.style.name}</li>
+                    <li>{artist.rates}</li> 
+                  </ul>  
+                </div>
               );
             })
-          
           )}
       </div>
   
