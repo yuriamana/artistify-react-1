@@ -9,6 +9,10 @@ import Album from "./views/Album";
 import Contact from "./views/Contact";
 import Dashboard from "./views/Dashboard";
 import NotFound from "./views/NotFound";
+import AdminArtists from "./components/admin/AdminArtists";
+import AdminAlbums from "./components/admin/AdminAlbums";
+import AdminLabels from "./components/admin/AdminLabels";
+import AdminStyles from "./components/admin/AdminStyles";
 // partials
 import HeaderMain from "./components/template/HeaderMain";
 import FooterMain from "./components/template/FooterMain";
