@@ -25,7 +25,6 @@ export default class Artists extends Component {
     }
   };
 
-
   render() {
     //  const { artists } = this.state.artists;
     return (
