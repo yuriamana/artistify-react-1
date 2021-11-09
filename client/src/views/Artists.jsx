@@ -15,7 +15,7 @@ export default class Artists extends Component {
     this.fetchArtists();
   }
   fetchArtists = async () => {
-    APIHandler.get("/api/artists" + this.props._id)
+   await APIHandler.get("/api/artists" + this.props.id)
       .then(({ data }) => {
         this.setState({
           artists: data,
@@ -24,15 +24,16 @@ export default class Artists extends Component {
       .catch((err) => {
         console.error(err);
       });
-  };
-  render() {
-    // const { artists } = this.state;
+    };
+    render() {
+    const { artists } = this.state;
     return (
       <div>
-        {!this.state.artists ? (
+        {!artists ? (
           <p>loading...</p>
         ) : (
-            this.state.artists.map(artist => {
+            artists.map(artist => {
+              console.log(artists)
               return (
                 <div>
                 <ul>
@@ -40,7 +41,7 @@ export default class Artists extends Component {
                   <li>{artist.description}</li>
                   <li>{artist.style}</li>
                   <li>{artist.rates}</li>
-                  
+                  <li>123123123</li>
                 </ul>  
                 <Link key={artist.id} to={"/artists/" + artist.id}>
                 <p>{artist.name}</p>
@@ -51,6 +52,7 @@ export default class Artists extends Component {
           
           )}
       </div>
+  
     );
   }
 }
