@@ -3,8 +3,8 @@ import React, { Component } from "react";
 import APIHandler from "../api/handler";
 // import LabPreview from "../components/preview/LabPreview";
 import { Link } from "react-router-dom";
-// styles
 import "../styles/card.css";
+// import artists from "../../../server/bin/seed/seed.artist.js";
 
 export default class Artists extends Component {
   state = {
@@ -49,6 +49,7 @@ export default class Artists extends Component {
           })
         )}
       </div>
+  
     );
   }
 }

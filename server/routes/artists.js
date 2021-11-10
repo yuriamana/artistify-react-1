@@ -3,11 +3,12 @@
 ------------------------------------------*/
 const express = require("express");
 const router = new express.Router();
-// const ArtistModel = require("../model/Artist")
 
 const artistModel = require("../model/Artist");
 const albumModel = require("../model/Album");
 const styleModel = require("../model/Style");
+
+const uploader = require("./../config/cloudinary")
 
 router.get("/artists", async (req, res, next) => {
   try {
@@ -20,9 +21,10 @@ router.get("/artists", async (req, res, next) => {
 
 // CREATE
 router.post("/artists", async (req, res, next) => {
-  console.log(req.file);
+  console.log(req.body)
+
   try {
-    const newArtist = await artistModel.create({ ...req.body, image: req.file.path }); //  req.file.path  => provided by cloudinary's response
+    const newArtist = await artistModel.create(req.body); //  req.file.path  => provided by cloudinary's response
     res.status(201).json(newArtist);
   } catch (err) {
     next(err);
