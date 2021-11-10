@@ -9,6 +9,10 @@ import Album from "./views/Album";
 import Contact from "./views/Contact";
 import Dashboard from "./views/Dashboard";
 import NotFound from "./views/NotFound";
+import AdminArtists from "./components/admin/AdminArtists";
+import AdminAlbums from "./components/admin/AdminAlbums";
+import AdminLabels from "./components/admin/AdminLabels";
+import AdminStyles from "./components/admin/AdminStyles";
 // partials
 import HeaderMain from "./components/template/HeaderMain";
 import FooterMain from "./components/template/FooterMain";
@@ -37,6 +41,11 @@ export default function App() {
           <Route path="/albums/:id" component={Album} />
           <Route path="/contact-us" component={Contact} />
           <Route path="/dashboard" component={Dashboard} />
+          <Route path="/admin/artists" component={AdminArtists} />
+          <Route path="/admin/album" component={AdminAlbums} />
+          <Route path="/admin/label" component={AdminLabels} />
+          <Route path="/admin/style" component={AdminStyles} />
+          {/* <Route path="/admin/:type(artists|albums|labels|styles)" component={TabAdmin} /> */}
 
           {/* handling 404 pages (if no matched route above this component triggers) */}
           <Route path="*" component={NotFound} />
