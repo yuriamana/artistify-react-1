@@ -6,7 +6,7 @@ const express = require("express");
 const router = new express.Router();
 
 const albumModel = require("../model/Album");
-// const uploader = require("./../config/cloudinary");
+const uploader = require("./../config/cloudinary");
 
 // router.get("/albums", (req, res) => {
 //   res.send("cooucoou");
@@ -30,6 +30,16 @@ router.get("/albums/:id", async (req, res, next) => {
   }
 });
 
+router.post("/albums", uploader.single("cover"), async (req, res, next) => {
+  try {
+    console.log(req.body)
+    const newAlbum = await albumModel.create({ ...req.body, cover: req.file.url })
+    res.status(201).json(newAlbum);
+  } catch (err) {
+    next(err);
+  }
+})
+
 router.delete("/:id", async (req, res, next) => {
   try {
     const deletedAlbum = await albumModel.findByIdAndDelete(req.params.id);
@@ -40,3 +50,7 @@ router.delete("/:id", async (req, res, next) => {
 });
 
 module.exports = router;
+
+// /users
+// /users    post
+//GET / POST/ PATCH / DELETE

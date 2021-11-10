@@ -2,7 +2,7 @@ import { Component } from "react";
 import APIHandler from "./../../api/handler";
 import { Link } from "react-router-dom";
 // import "../styles/card.css";
-import FormCreate from "./../admin/FormCreate";
+import FormCreateArtist from "./../admin/FormCreateArtist";
 
 export default class AdminArtists extends Component {
   state = {
@@ -45,7 +45,7 @@ export default class AdminArtists extends Component {
           {" "}
           add artist{" "}
         </button>
-        {this.state.displayForm && <FormCreate />}
+        {this.state.displayForm && <FormCreateArtist />}
         {!this.state.artists ? (
           <p>loading...</p>
         ) : (

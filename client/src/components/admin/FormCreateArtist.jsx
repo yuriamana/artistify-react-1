@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import APIHandler from "./../../api/handler";
 
-export default class FormCreate extends Component {
+export default class FormCreateArtist extends Component {
   constructor(props) {
     super(props);
     this.state = {

@@ -50,7 +50,7 @@ export default function App() {
           <Route path="/admin/albums" component={AdminAlbums} />
           <Route path="/admin/labels" component={AdminLabels} />
           <Route path="/admin/styles" component={AdminStyles} />
-          {/* <Route path="/admin/:type(artists|albums|labels|styles)" component={TabAdmin} /> */}
+          {/* <Route path="/admin/albums" component={AdminAlbumsCreate} /> */}
 
           {/* handling 404 pages (if no matched route above this component triggers) */}
           <Route path="*" component={NotFound} />
